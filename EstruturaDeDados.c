@@ -6,13 +6,8 @@
 #include <time.h>
 #define min
 
-int numeroInformado, contador = 0, contadorNumero1, contadorNumero2, armazenaNumeroTemporario = 0;
-double tempoDuracaoProcesso;
-
-// numeroDeAlgumentosPassado = argc = numero de parametros passados para a função principal (no minimo 1 parametro (padrão))
-// guardaArgumentosFuncaoPrincipal = *argv[] = guarda os parametros em um array passado para a função principal
-
 // Prototipando funções
+void binarySearch( int vetorOrdenado[], int tamanhoInformado );
 void bubbleSort();
 void selectionSort();
 void insertionSort();
@@ -24,6 +19,8 @@ void insertionSorting();
 main(){
 	
 	setlocale(LC_ALL, "Portuguese");
+	
+	int numeroInformado = 0;
 	
 	printf("Estruturas de dados\n");
 	printf("\n1 - Algoritmo da bolha. (Bubble Sort)");
@@ -97,6 +94,9 @@ main(){
 
 void bubbleSort(){
 	
+	int numeroInformado, contador = 0, contadorNumero1, contadorNumero2, armazenaNumeroTemporario = 0, numeroDigitadoBuscaBinaria;
+	double tempoDuracaoProcesso;
+	
 	printf("Algoritmo da bolha. (Bubble Sort)\n\n");
 	printf("Escolha os números abaixo para definir o tamanho da estrutura: \n");
 	printf("De -> 100\n");
@@ -169,9 +169,12 @@ void bubbleSort(){
 	system("pause");	
 	system("cls||clear");
 	
+	numeroDigitadoBuscaBinaria = numeroInformado;
+	
 	printf("Deseja volta pra onde: ");
 	printf("\n1 - Algoritmo da bolha. (Bubble Sort).");
-	printf("\n2 - Menu inicial.");
+	printf("\n2 - Deseja buscar algum número dentro do vetor ordenado. (Search binary).");
+	printf("\n3 - Menu inicial.");
 	printf("\n0 - Sair (Exit).");
 	printf("\n\nEscolha a opção desejada: ");
 	scanf("%d", &numeroInformado);
@@ -184,7 +187,14 @@ void bubbleSort(){
 			bubbleSort();
 		break;
 		
-		case 2: 
+		case 2:
+			printf("\n");
+			system("pause");
+			system("cls||clear");
+			binarySearch( vetorBublleSort, numeroDigitadoBuscaBinaria );
+		break; 
+		
+		case 3: 
 			printf("\n");
 			system("pause");
 			system("cls||clear");
@@ -204,6 +214,9 @@ void bubbleSort(){
 //--------------------------------------------
 
 void selectionSort(){
+	
+	int numeroInformado, contador = 0, contadorNumero1, contadorNumero2, armazenaNumeroTemporario = 0, numeroDigitadoBuscaBinaria;
+	double tempoDuracaoProcesso;
 	
 	printf("Algoritmo de seleção. (Selection Sort)\n\n");
 	printf("Escolha os números abaixo para definir o tamanho da estrutura: \n");
@@ -285,9 +298,12 @@ void selectionSort(){
 	system("pause");	
 	system("cls||clear");
 	
+	numeroDigitadoBuscaBinaria = numeroInformado;
+	
 	printf("Deseja volta pra onde: ");
 	printf("\n1 - Algoritmo de seleção. (Selection Sort).");
-	printf("\n2 - Menu inicial.");
+	printf("\n2 - Deseja buscar algum número dentro do vetor ordenado. (Search binary).");
+	printf("\n3 - Menu inicial.");
 	printf("\n0 - Sair (Exit).");
 	printf("\n\nEscolha a opção desejada: ");
 	scanf("%d", &numeroInformado);
@@ -300,7 +316,14 @@ void selectionSort(){
 			selectionSort();
 		break;
 		
-		case 2: 
+		case 2:
+			printf("\n");
+			system("pause");
+			system("cls||clear");
+			binarySearch( vetorSelectionSort, numeroDigitadoBuscaBinaria );
+		break; 
+		
+		case 3: 
 			printf("\n");
 			system("pause");
 			system("cls||clear");
@@ -320,6 +343,9 @@ void selectionSort(){
 //--------------------------------------------
 
 void insertionSort(){
+	
+	int numeroInformado, contador = 0, contadorNumero1, contadorNumero2, armazenaNumeroTemporario = 0, numeroDigitadoBuscaBinaria;
+	double tempoDuracaoProcesso;
 	
 	printf("Algoritmo de inserção. (Insertion Sort)\n\n");
 	printf("Escolha os números abaixo para definir o tamanho da estrutura: \n");
@@ -395,9 +421,12 @@ void insertionSort(){
 	system("pause");	
 	system("cls||clear");
 	
+	numeroDigitadoBuscaBinaria = numeroInformado;
+	
 	printf("Deseja volta pra onde: ");
 	printf("\n1 - Algoritmo de inserção. (Insertion Sort).");
-	printf("\n2 - Menu inicial.");
+	printf("\n2 - Deseja buscar algum número dentro do vetor ordenado. (Search binary).");
+	printf("\n3 - Menu inicial.");
 	printf("\n0 - Sair (Exit).");
 	printf("\n\nEscolha a opção desejada: ");
 	scanf("%d", &numeroInformado);
@@ -410,7 +439,14 @@ void insertionSort(){
 			insertionSort();
 		break;
 		
-		case 2: 
+		case 2:
+			printf("\n");
+			system("pause");
+			system("cls||clear");
+			binarySearch( vetorInsertionSort, numeroDigitadoBuscaBinaria );
+		break; 
+		
+		case 3: 
 			printf("\n");
 			system("pause");
 			system("cls||clear");
@@ -490,6 +526,9 @@ void processamentoMergeSort(int vetorInformado[], int inicioInformado, int final
 
 void mergeSort(){
 	
+	int numeroInformado, contador = 0, contadorNumero1, contadorNumero2, armazenaNumeroTemporario = 0, numeroDigitadoBuscaBinaria;
+	double tempoDuracaoProcesso;
+	
 	printf("Algoritmo de ordenação por mistura. (Merge Sort)\n\n");
 	printf("Escolha os números abaixo para definir o tamanho da estrutura: \n");
 	printf("De -> 100\n");
@@ -553,9 +592,12 @@ void mergeSort(){
 	system("pause");	
 	system("cls||clear");
 	
+	numeroDigitadoBuscaBinaria = numeroInformado;
+	
 	printf("Deseja volta pra onde: ");
 	printf("\n1 - Algoritmo de ordenação por mistura. (Merge Sort).");
-	printf("\n2 - Menu inicial.");
+	printf("\n2 - Deseja buscar algum número dentro do vetor ordenado. (Search binary).");
+	printf("\n3 - Menu inicial.");
 	printf("\n0 - Sair (Exit).");
 	printf("\n\nEscolha a opção desejada: ");
 	scanf("%d", &numeroInformado);
@@ -568,7 +610,14 @@ void mergeSort(){
 			mergeSort();
 		break;
 		
-		case 2: 
+		case 2:
+			printf("\n");
+			system("pause");
+			system("cls||clear");
+			binarySearch( vetorMergeSort, numeroDigitadoBuscaBinaria );
+		break; 
+		
+		case 3: 
 			printf("\n");
 			system("pause");
 			system("cls||clear");
@@ -639,6 +688,9 @@ void processamentoQuickSort( int vetorInformado[], int inicioInformado, int fina
 //--------------------------------------------
 void quickSort(){
 	
+	int numeroInformado, contador = 0, contadorNumero1, contadorNumero2, armazenaNumeroTemporario = 0, numeroDigitadoBuscaBinaria;
+	double tempoDuracaoProcesso;
+	
 	printf("Algoritmo de ordenação rápida. (Quick Sort)\n\n");
 	printf("Escolha os números abaixo para definir o tamanho da estrutura: \n");
 	printf("De -> 100\n");
@@ -703,9 +755,12 @@ void quickSort(){
 	system("pause");	
 	system("cls||clear");
 	
+	numeroDigitadoBuscaBinaria = numeroInformado;
+	
 	printf("Deseja volta pra onde: ");
 	printf("\n1 - Algoritmo de ordenação rápida. (Quick Sort).");
-	printf("\n2 - Menu inicial.");
+	printf("\n2 - Deseja buscar algum número dentro do vetor ordenado. (Search binary).");
+	printf("\n3 - Menu inicial.");
 	printf("\n0 - Sair (Exit).");
 	printf("\n\nEscolha a opção desejada: ");
 	scanf("%d", &numeroInformado);
@@ -718,7 +773,14 @@ void quickSort(){
 			quickSort();
 		break;
 		
-		case 2: 
+		case 2:
+			printf("\n");
+			system("pause");
+			system("cls||clear");
+			binarySearch( vetorQuickSort, numeroDigitadoBuscaBinaria );
+		break; 
+		
+		case 3: 
 			printf("\n");
 			system("pause");
 			system("cls||clear");
@@ -794,6 +856,9 @@ void timSort( int vetorInformado[], int tamanhoInformado, int inicioInformado, i
 //--------------------------------------------
 void timSorting(){
 	
+	int numeroInformado, contador = 0, contadorNumero1, contadorNumero2, armazenaNumeroTemporario = 0, numeroDigitadoBuscaBinaria;
+	double tempoDuracaoProcesso;
+	
 	printf("Algoritmo de ordenação híbrido. (TimSort)\n\n");
 	printf("Escolha os números abaixo para definir o tamanho da estrutura: \n");
 	printf("De -> 100\n");
@@ -858,9 +923,12 @@ void timSorting(){
 	system("pause");	
 	system("cls||clear");
 	
+	numeroDigitadoBuscaBinaria = numeroInformado;
+	
 	printf("Deseja volta pra onde: ");
 	printf("\n1 - Algoritmo de ordenação híbrido. (TimSort).");
-	printf("\n2 - Menu inicial.");
+	printf("\n2 - Deseja buscar algum número dentro do vetor ordenado. (Search binary).");
+	printf("\n3 - Menu inicial.");
 	printf("\n0 - Sair (Exit).");
 	printf("\n\nEscolha a opção desejada: ");
 	scanf("%d", &numeroInformado);
@@ -873,7 +941,14 @@ void timSorting(){
 			timSorting();
 		break;
 		
-		case 2: 
+		case 2:
+			printf("\n");
+			system("pause");
+			system("cls||clear");
+			binarySearch( vetorTimSort, numeroDigitadoBuscaBinaria );
+		break; 
+		
+		case 3: 
 			printf("\n");
 			system("pause");
 			system("cls||clear");
@@ -888,3 +963,62 @@ void timSorting(){
 		break;	
 	}
 }
+//--------------------------------------------
+
+//--------------------------------------------
+// processamento da busca binária que so pode ser executada com o array ordenado
+
+void binarySearch( int vetorOrdenado[], int tamanhoInformado ){
+	
+	int contador = 0, numeroDigitado = 0;
+	
+	system("cls||clear");
+	printf("Executando uma busca binária no array ordenado.\n");
+	
+	printf("O vetor organizado: \n\n");
+	
+	printf("Vetor = { ");
+	for( contador = 0; contador < tamanhoInformado; contador++ ){
+		if(contador == tamanhoInformado - 1){
+			printf("%d", vetorOrdenado[contador]);	
+		} else {
+			printf("%d, ", vetorOrdenado[contador]);
+		}
+	}
+	printf(" }");
+	
+	printf("\n\n");
+	
+	printf("Digite o valor que deseja buscar: ");
+	scanf("%d", &numeroDigitado);
+	
+	// Executando a busca binária
+	numberSearch( vetorOrdenado, numeroDigitado, tamanhoInformado );
+}
+
+// procurando o número desejado no vetor
+int numberSearch( int vetorOrdenado[], int numeroDigitado, int tamanhoInformado ){
+	
+	int posicaoInicialVetor, posicaoFinalVetor, posicaoDesejada;
+	posicaoInicialVetor = 0;
+	posicaoFinalVetor = tamanhoInformado - 1;
+	
+	while( posicaoInicialVetor <= posicaoFinalVetor ){
+		
+		posicaoDesejada = ( posicaoInicialVetor + posicaoFinalVetor ) / 2;
+		
+		if( numeroDigitado == vetorOrdenado[posicaoDesejada] ){
+			return printf("\n\nO valor %d, está na posicao: %d do array.\n\n", vetorOrdenado[posicaoDesejada], posicaoDesejada);
+		} else if( numeroDigitado < vetorOrdenado[posicaoDesejada] ){
+			posicaoFinalVetor = posicaoDesejada - 1;
+		} else {
+			posicaoInicialVetor = posicaoDesejada + 1;
+		}
+	}
+	
+	return printf("\n\nO valor procurado, não foi encontrado.\n\n"); 	
+}
+
+//--------------------------------------------
+
+
